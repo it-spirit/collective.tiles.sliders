@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.tiles.sliders">
+
+  <!-- Package dependencies. -->
+  <include package="plone.tiles" file="meta.zcml" />
+
+
+  <!-- Publish static files. -->
+  <plone:static
+      directory="assets"
+      name="collective.tiles.sliders.responsiveslides"
+      type="plone"
+      />
+
+
+  <!-- Slider tile. -->
+  <plone:tile
+      add_permission="cmf.ModifyPortalContent"
+      class=".tile.SliderTile"
+      description="A tile that shows a slider based on responsiveslides.js."
+      for="*"
+      layer="collective.tiles.sliders.interfaces.ICollectiveTilesSlidersLayer"
+      name="collective.tiles.sliders.responsiveslides"
+      permission="zope2.View"
+      schema=".tile.ISliderTile"
+      template="tile.pt"
+      title="Slider: responsiveslides"
+      />
+
+</configure>

@@ -1,0 +1,41 @@
+<html tal:define="tile_id view/id;
+                  images view/images | nothing;
+                  image_scale view/data/image_scale | string: large;
+                  show_captions view/data/show_captions | None;
+                  fullscreen python: view.data.get('allow_fullscreen') and 'fullscreen' or ''">
+  <body tal:condition="images">
+    <div id="slider-${tile_id}" class="slider ${fullscreen}">
+      <div class="rslides_container">
+        <ul class="rslides centered-btns centered-btns1">
+          <tal:repeat  tal:repeat="item images">
+            <li tal:define="description item/description | None;">
+              <img src="" alt="" tal:attributes="alt item/description | None; src python: item.get(image_scale)" />
+              <p class="caption" tal:condition="python: show_captions and description" tal:content="description"></p>
+            </li>
+          </tal:repeat>
+        </ul>
+      </div>
+    </div>
+    <link  href="++plone++collective.tiles.sliders.responsiveslides/responsiveslides.css" rel="stylesheet" type="text/css" />
+    <link  href="++plone++collective.tiles.sliders.responsiveslides/themes.css" rel="stylesheet" type="text/css" />
+    <script tal:define="autostart python:view.data.get('autostart') and 'true' or 'false';
+                        pager python:view.data.get('pager') and 'true' or 'false';
+                        navigation python:view.data.get('navigation') and 'true' or 'false';">require([
+      'jquery',
+      '++plone++collective.tiles.sliders.responsiveslides/responsiveslides.min.js'
+      ], function(Base) {
+        'use strict';
+        jQuery(function (jq) {
+          jQuery('#slider-${tile_id} .rslides').responsiveSlides({
+            auto: ${autostart},
+            pager: ${pager},
+            nav: ${navigation},
+            speed: ${view/data/animation_speed},
+            timeout: ${view/data/slideshow_speed},
+            namespace: '${view/data/namespace}',
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

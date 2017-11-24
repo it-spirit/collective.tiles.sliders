@@ -1,46 +1,18 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.tiles.sliders">
 
+  <!-- Register i18n support. -->
   <i18n:registerTranslations directory="locales" />
 
-  <!--
-    Be careful if you use general includeDependencies, it can have sideffects!
-    Better import explicite packages or configurations ;)
-  -->
-  <!--<includeDependencies package="." />-->
 
-
-  <include file="permissions.zcml" />
-
+  <!-- Include package dependencies. -->
+  <include package="plone.app.tiles" />
+  <include package="plone.tiles" />
+  <include package=".tiles" />
+  <include file="profiles.zcml" />
   <include file="upgrades.zcml" />
-
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.tiles.sliders"
-      directory="profiles/default"
-      description="Installs the collective.tiles.sliders add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.tiles.sliders (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the collective.tiles.sliders add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
-
-  <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="collective.tiles.sliders-hiddenprofiles"
-      />
-
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>
