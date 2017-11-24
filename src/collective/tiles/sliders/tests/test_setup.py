@@ -51,5 +51,6 @@ class TestUninstall(unittest.TestCase):
             ICollectiveTilesSlidersLayer
         from plone.browserlayer import utils
         self.assertNotIn(
-           ICollectiveTilesSlidersLayer,
-           utils.registered_layers())
+            ICollectiveTilesSlidersLayer,
+            utils.registered_layers()
+        )
