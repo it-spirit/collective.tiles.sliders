@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.tiles.sliders">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.tiles.sliders"
+      directory="profiles/default"
+      description="Installs the collective.tiles.sliders add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.tiles.sliders (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the collective.tiles.sliders add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <genericsetup:registerProfile
+      name="mosaic_support"
+      title="collective.tiles.sliders (mosaic support)"
+      directory="profiles/mosaic_support"
+      description="Make the tiles available for mosaic."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.tiles.sliders-hiddenprofiles"
+      />
+
+</configure>

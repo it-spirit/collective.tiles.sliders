@@ -18,6 +18,8 @@ install_requires = [
     # -*- Extra requirements: -*-
     'Products.GenericSetup>=1.8.2',
     'plone.api',
+    'plone.app.tiles',
+    'plone.tiles',
 ],
 
 testfixture_requires = [
