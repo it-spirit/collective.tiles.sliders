@@ -4,13 +4,12 @@
 from collective.tiles.sliders import _
 from collective.tiles.sliders.base import BaseSliderTile
 from collective.tiles.sliders.base import ISliderBase
-from collective.tiles.sliders.base import ISliderLayout
 from collective.tiles.sliders.base import ISliderSettings
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-class ISliderTile(ISliderBase, ISliderSettings, ISliderLayout):
+class ISliderTile(ISliderBase, ISliderSettings):
     """A tile that shows a slider."""
 
     namespace = schema.Choice(

@@ -141,20 +141,6 @@ class ISliderSettings(Schema):
     )
 
 
-class ISliderLayout(Schema):
-    """Image Tile Layout Schema."""
-
-    form.widget('allow_fullscreen', RadioFieldWidget)
-    allow_fullscreen = schema.Bool(
-        default=False,
-        description=_(
-            u'Sets a flag so a theme can show this slider in fullscreen mode.'
-        ),
-        required=False,
-        title=_(u'Allow fullscreen'),
-    )
-
-
 class BaseTile(tiles.Tile):
     """Base tile implementation."""
 

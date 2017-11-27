@@ -5,7 +5,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Remove allow_fullscreen setting.
+  [tmassman]
 
 
 0.1 (2017-11-27)
