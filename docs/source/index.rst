@@ -1,6 +1,6 @@
-***************************************
+=======================================
 A collection of slider tiles for Mosaic
-***************************************
+=======================================
 
 .. only:: html
 
@@ -10,14 +10,5 @@ A collection of slider tiles for Mosaic
 .. toctree::
    :maxdepth: 2
 
-   configuration
-
-
-.. only:: html
-
-  Indices and tables
-  ==================
-
-  * :ref:`genindex`
-  * :ref:`modindex`
-  * :ref:`search`
+   Installation <install>
+   Sliders <sliders/index>
