@@ -3,6 +3,10 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.tiles.sliders">
 
+  <!-- GenericSetup Profiles. -->
+  <!-- ====================== -->
+
+  <!-- Installation: Plone 5. -->
   <genericsetup:registerProfile
       name="default"
       title="collective.tiles.sliders"
@@ -12,6 +16,7 @@
       post_handler=".setuphandlers.post_install"
       />
 
+  <!-- Uninstall: Plone 5. -->
   <genericsetup:registerProfile
       name="uninstall"
       title="collective.tiles.sliders (uninstall)"
@@ -29,9 +34,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+
+  <!-- GenericSetup utilities. -->
+  <!-- ======================= -->
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="collective.tiles.sliders-hiddenprofiles"
+      />
+
+  <subscriber
+      handler=".setuphandlers.handle_profile_imported_event"
       />
 
 </configure>
