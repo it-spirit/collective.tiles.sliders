@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
-"""Setup tests for this package."""
+"""Test Setup of collective.tiles.githubgist."""
+
+from collective.tiles.sliders import config
+from collective.tiles.sliders.testing import INTEGRATION_TESTING
 from plone import api
-from collective.tiles.sliders.testing import COLLECTIVE_TILES_SLIDERS_INTEGRATION_TESTING  # noqa
+from plone.browserlayer.utils import registered_layers
 
 import unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that collective.tiles.sliders is properly installed."""
+    """Validate setup process for collective.tiles.sliders."""
 
-    layer = COLLECTIVE_TILES_SLIDERS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -17,40 +20,35 @@ class TestSetup(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
-        """Test if collective.tiles.sliders is installed."""
-        self.assertTrue(self.installer.isProductInstalled(
-            'collective.tiles.sliders'))
+        """Validate that our product is installed."""
+        self.assertTrue(
+            self.installer.isProductInstalled(config.PROJECT_NAME)
+        )
 
-    def test_browserlayer(self):
-        """Test that ICollectiveTilesSlidersLayer is registered."""
-        from collective.tiles.sliders.interfaces import (
-            ICollectiveTilesSlidersLayer)
-        from plone.browserlayer import utils
-        self.assertIn(
-            ICollectiveTilesSlidersLayer,
-            utils.registered_layers())
+    def test_addon_layer(self):
+        """Validate that the browserlayer for our product is installed."""
+        layers = [l.getName() for l in registered_layers()]
+        self.assertIn('ICollectiveTilesSlidersLayer', layers)
 
 
 class TestUninstall(unittest.TestCase):
+    """Validate uninstall process for plonetheme.barcelonetang."""
 
-    layer = COLLECTIVE_TILES_SLIDERS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
+        """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         self.installer = api.portal.get_tool('portal_quickinstaller')
-        self.installer.uninstallProducts(['collective.tiles.sliders'])
+        self.installer.uninstallProducts([config.PROJECT_NAME])
 
     def test_product_uninstalled(self):
-        """Test if collective.tiles.sliders is cleanly uninstalled."""
+        """Validate that our product is uninstalled."""
         self.assertFalse(self.installer.isProductInstalled(
-            'collective.tiles.sliders'))
+            config.PROJECT_NAME,
+        ))
 
-    def test_browserlayer_removed(self):
-        """Test that ICollectiveTilesSlidersLayer is removed."""
-        from collective.tiles.sliders.interfaces import \
-            ICollectiveTilesSlidersLayer
-        from plone.browserlayer import utils
-        self.assertNotIn(
-            ICollectiveTilesSlidersLayer,
-            utils.registered_layers()
-        )
+    def test_addon_layer_removed(self):
+        """Validate that the browserlayer is removed."""
+        layers = [l.getName() for l in registered_layers()]
+        self.assertNotIn('ICollectiveTilesSlidersLayer', layers)
