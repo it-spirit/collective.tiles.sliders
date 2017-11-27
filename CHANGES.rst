@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2 (unreleased)
+0.2 (2017-11-27)
 ----------------
 
 - Remove allow_fullscreen setting.
