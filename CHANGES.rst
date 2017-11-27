@@ -7,3 +7,6 @@ Changelog
 
 - Initial release.
   [tmassman]
+
+- Added responsiveslides.js based slider.
+  [tmassman]
