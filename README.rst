@@ -2,7 +2,28 @@
 collective.tiles.sliders
 ========================
 
-This Plone Add-On adds several tiles for `Plone <https://plone.org>`_ Websites to show slideshows.
+.. image:: https://img.shields.io/pypi/v/collective.tiles.sliders.svg
+   :target: https://pypi.python.org/pypi/collective.tiles.sliders
+   :alt: PyPI Version
+
+.. image:: https://img.shields.io/pypi/pyversions/collective.tiles.sliders.svg
+   :target: https://pypi.python.org/pypi/collective.tiles.sliders
+   :alt: Supported Python Versions
+
+.. image:: https://img.shields.io/travis/it-spirit/collective.tiles.sliders/master.svg
+   :target: http://travis-ci.org/it-spirit/collective.tiles.sliders
+   :alt: Travis CI status
+
+.. image:: https://img.shields.io/coveralls/github/it-spirit/collective.tiles.sliders/master.svg
+   :target: https://coveralls.io/github/it-spirit/collective.tiles.sliders?branch=master
+   :alt: Coverage Status
+
+.. image:: https://img.shields.io/readthedocs/collectivetilessliders.svg
+   :target: http://collectivetilessliders.readthedocs.io
+   :alt: Documentation
+
+
+This Plone Add-On adds a collection of slider tiles for `Plone <https://plone.org>`_ Websites.
 
 
 Features
