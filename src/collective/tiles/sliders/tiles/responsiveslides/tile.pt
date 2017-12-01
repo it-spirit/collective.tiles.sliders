@@ -10,7 +10,9 @@
           <ul class="rslides centered-btns centered-btns1">
             <tal:repeat  tal:repeat="item images">
               <li tal:define="description item/description | None;">
-                <img src="" alt="" tal:attributes="alt item/description | None; src python: item.get(image_scale)" />
+                <a href="" tal:define="link item/link | nothing" tal:omit-tag="not: link" tal:attributes="href link">
+                  <img src="" alt="" tal:attributes="alt item/description | None; src python: item.get(image_scale)" />
+                </a>
                 <p class="caption" tal:condition="python: show_captions and description" tal:content="description"></p>
               </li>
             </tal:repeat>

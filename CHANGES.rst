@@ -8,6 +8,9 @@ Changelog
 - Only return link for related items, not the image (like) object itself.
   [tmassman]
 
+- Add link (if available) to responsiveslides.js slider.
+  [tmassman]
+
 
 0.3 (2017-12-01)
 ----------------
