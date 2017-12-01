@@ -5,7 +5,11 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add custom widget for content selection.
+  [tmassman]
+
+- Register JS resources (pattern) and bundle.
+  [tmassman]
 
 
 0.2 (2017-11-27)
