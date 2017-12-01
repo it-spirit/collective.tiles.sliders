@@ -15,4 +15,11 @@
   <include file="profiles.zcml" />
   <include file="upgrades.zcml" />
 
+
+  <plone:static
+      directory="static"
+      type="plone"
+      name="collectivetilessliders"
+      />
+
 </configure>
