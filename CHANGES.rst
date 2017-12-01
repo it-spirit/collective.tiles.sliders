@@ -11,6 +11,9 @@ Changelog
 - Add link (if available) to responsiveslides.js slider.
   [tmassman]
 
+- Add styling for captions on responsiveslides.js slider.
+  [tmassman]
+
 
 0.3 (2017-12-01)
 ----------------
