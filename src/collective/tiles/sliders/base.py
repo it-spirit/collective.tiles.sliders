@@ -2,7 +2,6 @@
 """Base tile classes."""
 
 from collective.tiles.sliders import _
-from collective.tiles.sliders.utils import get_object
 from collective.tiles.sliders.utils import parse_query_from_data
 from collective.tiles.sliders.widget import UseQueryFieldWidget
 from plone import api
@@ -162,24 +161,13 @@ class BaseTile(tiles.Tile):
 
 
 @implementer(IPersistentTile)
-class ContentTile(BaseTile):
-    """A content tile."""
+class BaseSliderTile(BaseTile):
+    """An base slider tile."""
 
-    default_display_fields = ('title', 'image', 'description')
-    sort_limit = 1
+    sort_limit = 0
 
     def render(self):
         return self.index()
-
-    @property
-    def content(self):
-        if self.data.get('use_query') in ('True', True, 'true'):
-            catalog = self.catalog
-            items = catalog(**self.query)
-            if len(items) > 0:
-                return items[0].getObject()
-        else:
-            return get_object(self.data['content'][0])
 
     @property
     def query(self):
@@ -187,13 +175,6 @@ class ContentTile(BaseTile):
         if self.sort_limit:
             parsed['sort_limit'] = self.sort_limit
         return parsed
-
-
-@implementer(IPersistentTile)
-class BaseSliderTile(ContentTile):
-    """An base slider tile."""
-
-    sort_limit = 0
 
     @property
     @view.memoize
