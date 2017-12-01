@@ -4,6 +4,7 @@
 from collective.tiles.sliders import _
 from collective.tiles.sliders.utils import get_object
 from collective.tiles.sliders.utils import parse_query_from_data
+from collective.tiles.sliders.widget import UseQueryFieldWidget
 from plone import api
 from plone import tiles
 from plone.app.z3cform.widget import QueryStringFieldWidget
@@ -39,6 +40,7 @@ def image_scales(context):
 class ISliderBase(Schema):
     """Basic Image Tile Schema."""
 
+    form.widget('use_query', UseQueryFieldWidget)
     use_query = schema.Bool(
         default=False,
         title=_(u'Use dynamic query'),
