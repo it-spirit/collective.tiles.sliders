@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Test Layer for collective.tiles.githubgist."""
+"""Test Layer for collective.tiles.sliders."""
 
 from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
@@ -11,7 +11,7 @@ from plone.testing import z2
 
 
 class Fixture(PloneSandboxLayer):
-    """Custom Test Layer for collective.tiles.githubgist."""
+    """Custom Test Layer for collective.tiles.sliders."""
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 

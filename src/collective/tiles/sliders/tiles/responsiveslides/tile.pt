@@ -21,9 +21,10 @@
       <link  href="++plone++collective.tiles.sliders.responsiveslides/themes.css" rel="stylesheet" type="text/css" />
       <script tal:define="autostart python:view.data.get('autostart') and 'true' or 'false';
                           pager python:view.data.get('pager') and 'true' or 'false';
-                          navigation python:view.data.get('navigation') and 'true' or 'false';">require([
-        'jquery',
-        '++plone++collective.tiles.sliders.responsiveslides/responsiveslides.min.js'
+                          navigation python:view.data.get('navigation') and 'true' or 'false';">
+        require([
+          'jquery',
+          '++plone++collective.tiles.sliders.responsiveslides/responsiveslides.min.js'
         ], function(Base) {
           'use strict';
           jQuery(function (jq) {

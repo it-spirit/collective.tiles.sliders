@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Test Setup of collective.tiles.githubgist."""
+"""Test Setup of collective.tiles.sliders."""
 
 from collective.tiles.sliders import config
 from collective.tiles.sliders.testing import INTEGRATION_TESTING
