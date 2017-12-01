@@ -190,12 +190,14 @@ class BaseSliderTile(BaseTile):
 
     def get_image_data_from_brain(self, brain):
         base_url = brain.getURL()
+        related = self.get_related(brain.getObject())
         data = {
             'original': base_url,
             'title': brain.Title,
             'description': brain.Description or '',
-            'link': '{0}/view'.format(base_url)
         }
+        if related:
+            data['link'] = '{0}/view'.format(related.absolute_url())
         for value in self.image_sizes:
             data[value] = '{0}/@@images/image/{1}'.format(
                 base_url,
@@ -205,13 +207,14 @@ class BaseSliderTile(BaseTile):
 
     def get_image_data(self, im):
         base_url = im.absolute_url()
-        related = self.get_related(im) or im
+        related = self.get_related(im)
         data = {
             'original': base_url,
             'title': im.Title(),
             'description': im.Description() or '',
-            'link': '{0}/view'.format(related.absolute_url())
         }
+        if related:
+            data['link'] = '{0}/view'.format(related.absolute_url())
         for value in self.image_sizes:
             data[value] = '{0}/@@images/image/{1}'.format(
                 base_url,
@@ -277,6 +280,9 @@ class BaseSliderTile(BaseTile):
 
     def get_related(self, obj):
         try:
-            return obj.relatedItems[0]
+            item = obj.relatedItems[0]
         except Exception:
             return None
+        if item.isBroken():
+            return
+        return item.to_object

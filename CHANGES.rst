@@ -5,7 +5,8 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Only return link for related items, not the image (like) object itself.
+  [tmassman]
 
 
 0.3 (2017-12-01)
