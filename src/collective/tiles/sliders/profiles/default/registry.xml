@@ -5,4 +5,35 @@
       <element>collective.tiles.sliders.responsiveslides</element>
     </value>
   </record>
+
+  <records prefix="plone.resources/ctsliders-dynamicform"
+      interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++collectivetilessliders/pattern/dynamicform.js</value>
+  </records>
+
+  <records prefix="plone.resources/bundle-ctsliders"
+      interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++collectivetilessliders/bundle.js</value>
+  </records>
+
+  <records prefix="plone.bundles/ctsliders"
+      interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <!-- reference to bundle resource definition -->
+      <element>bundle-ctsliders</element>
+    </value>
+    <value key="merge_with">logged-in</value>
+    <value key="enabled">True</value>
+    <value key="jscompilation">++plone++collectivetilessliders/collectivetilessliders-compiled.min.js</value>
+    <value key="csscompilation"></value>
+    <value key="last_compilation">2017-12-01 10:00:00</value>
+
+    <!-- so we don't include these modules multiple times -->
+    <value key="stub_js_modules">
+      <element>jquery</element>
+      <element>mockup-patterns-base</element>
+      <element>mockup-utils</element>
+    </value>
+  </records>
+
 </registry>
