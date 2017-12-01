@@ -5,6 +5,9 @@
 *~
 .installed.cfg
 .mr.developer.cfg
+Gruntfile.js
+package.json
+package-lock.json
 bin/
 checkouts/
 coverage/
@@ -14,5 +17,7 @@ docs/build/
 downloads/
 eggs/
 htmlcov/
+node_modules/
 parts/
+temp_resources/
 var/

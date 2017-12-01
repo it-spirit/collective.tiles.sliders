@@ -1,1 +1,3 @@
 src/collective/tiles/sliders/tiles/**/assets/*.js
+src/collective/tiles/sliders/static/bundle-ctsliders-compiled.js
+src/collective/tiles/sliders/static/collectivetilessliders-compiled.min.js
