@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.4 (unreleased)
+0.4 (2017-12-01)
 ----------------
 
 - Only return link for related items, not the image (like) object itself.

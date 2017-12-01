@@ -5,7 +5,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '0.4.dev0'
+version = '0.4'
 description = 'A collection of slider tiles for Mosaic.'
 long_description = '\n\n'.join([
     open('README.rst').read(),
