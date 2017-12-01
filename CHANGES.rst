@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.3 (unreleased)
+0.3 (2017-12-01)
 ----------------
 
 - Add custom widget for content selection.
