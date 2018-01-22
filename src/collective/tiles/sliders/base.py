@@ -48,7 +48,7 @@ class ISliderBase(Schema):
     form.widget('images', RelatedItemsFieldWidget)
     images = schema.List(
         description=_(
-            u'Select images or folders of images to display in slider'
+            u'Select images or folders of images to display in slider',
         ),
         required=False,
         title=_(u'Images'),
@@ -61,7 +61,7 @@ class ISliderBase(Schema):
     query = schema.List(
         description=_(
             u'Define the search terms for the images you want to use. '
-            u'The list of results will be dynamically updated'
+            u'The list of results will be dynamically updated',
         ),
         required=False,
         title=_(u'Search terms'),
@@ -135,7 +135,7 @@ class ISliderSettings(Schema):
     show_captions = schema.Bool(
         default=False,
         description=_(
-            u'Show captions for slides? It will use an image\'s description.'
+            u'Show captions for slides? It will use an image\'s description.',
         ),
         required=False,
         title=_(u'Show Captions'),

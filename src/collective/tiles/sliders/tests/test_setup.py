@@ -22,7 +22,7 @@ class TestSetup(unittest.TestCase):
     def test_product_installed(self):
         """Validate that our product is installed."""
         self.assertTrue(
-            self.installer.isProductInstalled(config.PROJECT_NAME)
+            self.installer.isProductInstalled(config.PROJECT_NAME),
         )
 
     def test_addon_layer(self):
